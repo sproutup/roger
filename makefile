@@ -34,7 +34,7 @@ init:
 create: init
 	cd target/docker; eb create $(application_name) -c $(cname) --cfg $(configuration)
 
-deploy: clean stage docker init
+deploy: master clean stage docker init
 	cd target/docker; eb deploy
 
 docker:
