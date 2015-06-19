@@ -38,12 +38,12 @@ public class Application extends Controller {
    	 	
     	
     	
-    	System.out.println("id " + id);
-    	System.out.println("url " + url);
-    	System.out.println("contentURL: " + contentURL);
-    	System.out.println("productName: " + productName);
-    	System.out.println("productSlug: " + productSlug);
-    	System.out.println("destinationURL: " + destinationURL);
+//    	System.out.println("id " + id);
+//    	System.out.println("url " + url);
+//    	System.out.println("contentURL: " + contentURL);
+//    	System.out.println("productName: " + productName);
+//    	System.out.println("productSlug: " + productSlug);
+//    	System.out.println("destinationURL: " + destinationURL);
    	 	
     	return ok(content.render(contentURL, productName, productSlug, destinationURL));
        
