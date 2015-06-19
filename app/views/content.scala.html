@@ -3,88 +3,87 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>SproutUp - supporting @productName grow</title>
-        <link rel="stylesheet" media="all" href="@routes.Assets.at("stylesheets/content.css")">
-        <link rel="shortcut icon" type="image/jpg" href="@routes.Assets.at("images/round-logo-blue.jpg")">
-        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
-		<script src="@routes.Assets.at("javascripts/content.js")" type="text/javascript"></script>
- 
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<head>
+    <title>SproutUp - Supporting @productName grow</title>
+    <link rel="stylesheet" media="all" href="@routes.Assets.at("stylesheets/content.css")">
+    <link rel="shortcut icon" type="image/jpg" href="@routes.Assets.at("images/logo-square.png")">
+    <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/content.js")" type="text/javascript"></script>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 </head>
 <body>
 
-  
+
 <script>
-  $(document).ready(function () {
+$(document).ready(function () {
     window.location.hash='@contentURL';
-  });
+});
 </script>
 
 <style>
-    .sprtupC {
-      background: #000000;
-    }
+.sprtupC {
+    background: #000000;
+}
 
-    .cta_message {
-      color: #ffffff !important;
-    }
+.cta_message {
+    color: #ffffff !important;
+}
 
-    .call_to_action {
-      background: #2286e3;
-      border: none;
-    }
-    .call_to_action:hover {
-      background: #2286e3;
-      opacity: 0.7;
-      color: #000000;
-    }
+.call_to_action {
+    background: #2996cc;
+    border: none;
+}
+.call_to_action:hover {
+    background: ##31CCFF;
+    color: white;
+}
 
-    .call_to_action {
-      color: #ffffff;
-    }
+.call_to_action {
+    color: #ffffff;
+}
 </style>
 
 
 <!-- <div class="sprtup-frame-wrap"> -->
 <div class="sprtup_container">
 
-  <iframe src="@contentURL/?utm_source=sprtup" id="iframe" class="sprtup-frame" width="300" frameborder="0" noresize="noresize" scrolling="no"></iframe>
+    <iframe src="@contentURL/?utm_source=sprtup" id="iframe" class="sprtup-frame" width="300" frameborder="0" noresize="noresize" scrolling="no"></iframe>
 
-  <div class="sprtup">
-    <div class="container-fluid">
-      <div class="sprtup_wrap">
+    <div class="sprtup">
+        <div class="container-fluid">
+            <div class="sprtup_wrap">
 
-          <div class="sprtupA">
-            <img class="img-responsive" src="@routes.Assets.at("images/round-logo-blue.jpg")" alt="Square image" />
-          </div> <!-- sprtupA -->
+                <div class="sprtupA">
+                    <img class="img-responsive" src="@routes.Assets.at("images/logo-square.png")" alt="Square image" />
+                </div> <!-- sprtupA -->
 
-        <div class="sprtupC image">
+                <div class="sprtupC image">
 
-          <div class="row">
-            <div class="content content-left col-xs-8 col-sm-9">
-              <div class="table">
-                <span class="message cta_message">
-                  Like @productName? Help it grow and earn cool rewards in the process!
-                </span>
-              </div>
-            </div>
+                    <div class="row">
+                        <div class="content content-left col-xs-8 col-sm-9">
+                            <div class="table">
+                                <span class="message cta_message">
+                                    Like @productName? Help it grow and earn cool rewards in the process!
+                                </span>
+                            </div>
+                        </div>
 
-            <div class="content content-right col-xs-4 col-sm-3">
-              <div class="table">
-                <span class="message">
-                  <a href="@destinationURL" target="_blank" class="btn btn-info call_to_action">SproutUp</a>
-                </span>
-              </div>
-            </div>
-          </div> <!-- row -->
+                        <div class="content content-right col-xs-4 col-sm-3">
+                            <div class="table">
+                                <span class="message">
+                                    <a href="@destinationURL" target="_blank" class="btn btn-info call_to_action">SproutUp</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div> <!-- row -->
 
-        </div> <!-- sprtupC -->
+                </div> <!-- sprtupC -->
 
-      </div> <!-- sprtup_wrap -->
-    </div> <!-- container -->
-  </div> <!-- sprtup -->
+            </div> <!-- sprtup_wrap -->
+        </div> <!-- container -->
+    </div> <!-- sprtup -->
 
 
 </div> <!-- sprtup_container -->
@@ -92,7 +91,7 @@
 <!--[if IE]>
 <script>
 window.onload=function() {
-  if (location.href.indexOf('again')==-1) location.replace(location.href+'?again');
+if (location.href.indexOf('again')==-1) location.replace(location.href+'?again');
 }
 </script>
 <![endif]-->
@@ -101,41 +100,41 @@ window.onload=function() {
 
 $(document).ready(function(){
     $.ajax({
-       url: "/trackings",
-       type: 'POST',    
-       data: {tracking:{link_id:"86876686868jhi88"}},
-       dataType : 'json',
-       timeout: 2000,
-       success: function(data) {
-          $(".call_to_action").click(function(e) {
-            e.preventDefault(); 
-            var href = $(this).attr("href");
-            $.ajax({
-               url: "/trackings/"+data.id,
-               type: 'PUT',    
-               data: {tracking:{clicked:1}},
-               dataType : 'json',
-               timeout: 2000,
-               complete: function() {
-                  window.location = href;
-               }
+        url: "/trackings",
+        type: 'POST',
+        data: {tracking:{link_id:"86876686868jhi88"}},
+        dataType : 'json',
+        timeout: 2000,
+        success: function(data) {
+            $(".call_to_action").click(function(e) {
+                e.preventDefault();
+                var href = $(this).attr("href");
+                $.ajax({
+                    url: "/trackings/"+data.id,
+                    type: 'PUT',
+                    data: {tracking:{clicked:1}},
+                    dataType : 'json',
+                    timeout: 2000,
+                    complete: function() {
+                        window.location = href;
+                    }
+                });
             });
-          });       
         }
-      });
-  $(window).load(function() {
-   // executes when complete page is fully loaded, including all frames, objects and images
-    msieversion();
-  });
-  var iFrameID = document.getElementById('iframe').contentWindow.document;
-  var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
-  if (iOS)
-  {
-    iFrameID.addClass('ios');
-  } else {
-    $('#iframe').attr("scrolling", "yes");
-      $('#iframe').attr("src", $('#iframe').attr("src"));
-  }
+    });
+    $(window).load(function() {
+        // executes when complete page is fully loaded, including all frames, objects and images
+        msieversion();
+    });
+    var iFrameID = document.getElementById('iframe').contentWindow.document;
+    var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
+    if (iOS)
+    {
+        iFrameID.addClass('ios');
+    } else {
+        $('#iframe').attr("scrolling", "yes");
+        $('#iframe').attr("src", $('#iframe').attr("src"));
+    }
 
 });
 
@@ -144,6 +143,6 @@ $(document).ready(function(){
 
 
 </body>
-    
-    
+
+
 </html>
