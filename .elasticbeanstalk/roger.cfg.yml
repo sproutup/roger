@@ -1,0 +1,22 @@
+EnvironmentConfigurationMetadata:
+  Description: Imageserver standard configuration.
+  DateModified: '1434116451000'
+  DateCreated: '1434116451000'
+AWSConfigurationTemplateVersion: 1.1.0.0
+EnvironmentTier:
+  Name: WebServer
+  Type: Standard
+SolutionStack: 64bit Amazon Linux 2015.03 v1.4.1 running Docker 1.6.0
+OptionSettings:
+  aws:elasticbeanstalk:command:
+    BatchSize: '30'
+    BatchSizeType: Percentage
+  aws:autoscaling:launchconfiguration:
+    IamInstanceProfile: aws-elasticbeanstalk-ec2-role
+    EC2KeyName: endurance
+    InstanceType: t2.micro
+    SecurityGroups: webserver
+  aws:elasticbeanstalk:environment:
+    EnvironmentType: SingleInstance
+  aws:elasticbeanstalk:application:environment:
+    ENABLE_COOL_FEATURE: true

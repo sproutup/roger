@@ -1,0 +1,10 @@
+branch-defaults:
+  master:
+    environment: roger
+global:
+  application_name: roger
+  default_ec2_keyname: endurance
+  default_platform: docker
+  default_region: us-west-2
+  profile: null
+  sc: git
