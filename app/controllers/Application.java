@@ -30,7 +30,7 @@ public class Application extends Controller {
 	   	 			productSlug = url.substring(url.lastIndexOf("product_slug=")+("product_slug=").length(), url.length());
 	   	 			
 	   	 			if (productSlug!=null)
-	   	 				destinationURL = destinationURL + "/product/"+productSlug+"?campaign=" + id + "&utm_source=sprtup";
+	   	 				destinationURL = destinationURL + "/product/"+productSlug+"?refId=" + id + "&utm_source=sprtup";
 	   	 		
 	   	 		}
    	 		}
